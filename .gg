@@ -1,0 +1,17 @@
+project: "Simposio Remotion"
+version: "1.0.0"
+memory: true
+
+# Reglas de convivencia con el Arquitecto (Alan-style)
+rules:
+  - "Analizar la estructura de carpetas antes de proponer cambios profundos."
+  - "Priorizar el uso de TypeScript para mantener la coherencia de los datos en los videos."
+  - "En Remotion, buscar soluciones que respeten el renderizado determinista."
+  - "Si se detecta una técnica compleja, explicar el 'porqué' antes de implementarla."
+
+# Etiquetas para que Engram categorice mejor tus recuerdos
+tags:
+  - "remotion"
+  - "video-as-code"
+  - "react"
+  - "simposio-2026"

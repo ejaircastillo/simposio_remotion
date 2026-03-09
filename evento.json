@@ -1,0 +1,41 @@
+{
+  "evento": "PRIMER SIMPOSIO AMERICANO Y EUROPEO DE VICTIMOLOGÍA PENAL",
+  "subtitulo": "Las víctimas de homicidio en contexto de inseguridad",
+  "fechas": "Jueves 9 y viernes 10 de abril de 2026",
+  "horario": "15:00 a 19:00 hs",
+  "ubicacion": "Auditorio del Colegio Público de la Abogacía de Capital Federal (CPACF), Av. Corrientes 1441, CABA",
+  "web": "www.simposiousinadejusticia.org.ar",
+  "assets_globales": {
+    "logo_usina": "logo-usina.png",
+    "logo_ivujus": "IVUJUS.png",
+    "logo_colegio": "Colegio_Abogados.png",
+    "favicon": "favicon_usina.png"
+  },
+  "oradores_principales": [
+    {"nombre": "IRVIN WALLER", "pais": "Canadá", "archivo": "waller.webp"},
+    {"nombre": "MARÍA DE LA LUZ LIMA MALVIDO", "pais": "México", "archivo": "malvido.webp"},
+    {"nombre": "MARCELO AEBI", "pais": "Argentina-Suiza", "archivo": "aebi.webp"},
+    {"nombre": "DARÍO SOLÍS", "pais": "Panamá", "archivo": "Dario Solis.webp"}
+  ],
+  "moderadores": [
+    {"nombre": "MARIANA ROMANO", "archivo": "romano.webp"},
+    {"nombre": "GUSTAVO TOPIC", "archivo": "topic.webp"}
+  ],
+  "bloques_jueves": [
+    {"hora": "15:00", "tema": "Apertura", "disertantes": ["Ricardo-Gil-lavedra.webp", "Diana_hd.webp", "console.webp", "jimena_1.webp"]},
+    {"hora": "15:20", "tema": "Panel I: Políticas Públicas", "disertantes": ["malvido.webp"]},
+    {"hora": "16:05", "tema": "Panel II: Derecho Penal", "disertantes": ["castex.webp", "console.webp"]},
+    {"hora": "16:35", "tema": "Panel III: La Ciencia", "disertantes": ["roggero.webp", "juarez.webp"]},
+    {"hora": "17:15", "tema": "Panel IV: Datos Genéticos", "disertantes": ["slotolow.webp", "bargna.webp"]},
+    {"hora": "18:00", "tema": "Panel V: Defensor de Víctima", "disertantes": ["Dario Solis.webp"]}
+  ],
+  "bloques_viernes": [
+    {"hora": "14:50", "tema": "Apertura", "disertantes": ["quintana.webp"]},
+    {"hora": "15:00", "tema": "Panel I: Derechos de las Víctimas", "disertantes": ["waller.webp"]},
+    {"hora": "15:45", "tema": "Panel II: Política Criminal", "disertantes": ["garavano.webp", "casares.webp"]},
+    {"hora": "16:15", "tema": "Panel III: Juicio en Ausencia", "disertantes": ["fiumara.webp", "soto.webp"]},
+    {"hora": "17:10", "tema": "Panel IV: Etapa de Ejecución", "disertantes": ["peluzzi.webp"]},
+    {"hora": "17:20", "tema": "Panel V: Abolicionismo Penal", "disertantes": ["pascua.webp", "jimena_1.webp"]},
+    {"hora": "17:40", "tema": "Panel VI: Criminología Crítica", "disertantes": ["aebi.webp"]}
+  ]
+}
