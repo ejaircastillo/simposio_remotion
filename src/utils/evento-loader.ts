@@ -270,6 +270,31 @@ export function createModerators(data: EventoData): Moderador[] {
   });
 }
 
+// ─── Speaker Name Mapping ────────────────────────────────────────────────────────
+
+const SPEAKER_NAME_MAP: Record<string, string> = {
+  'Ricardo-Gil-lavedra.webp': 'RICARDO GIL LAVEDRA',
+  'Diana_hd.webp': 'DIANA COHEN AGREST',
+  'console.webp': 'JOSÉ CONSOLE',
+  'jimena_1.webp': 'MARÍA JIMENA MOLINA',
+  'malvido.webp': 'MARÍA DE LA LUZ LIMA MALVIDO',
+  'castex.webp': 'FRANCISCO CASTEX',
+  'roggero.webp': 'DANIEL ROGGERO',
+  'juarez.webp': 'NOELIA MARELYN JUAREZ',
+  'slotolow.webp': 'RAQUEL SLOTOLOW',
+  'bargna.webp': 'GUILLERMO BARGNA',
+  'Dario Solis.webp': 'DARÍO SOLÍS',
+  'quintana.webp': 'FRANCISCO QUINTANA',
+  'waller.webp': 'IRVIN WALLER',
+  'Garavano.webp': 'GERMÁN GARAVANO',
+  'casares.webp': 'MARTÍN CASARES',
+  'fiumara.webp': 'FRANCO FIUMARA',
+  'soto.webp': 'FERNANDO SOTO',
+  'peluzzi.webp': 'MARCELO PELUZZI',
+  'pascua.webp': 'FRANCISCO JAVIER PASCUA',
+  'aebi.webp': 'MARCELO AEBI',
+};
+
 // ─── Helper Functions ───────────────────────────────────────────────────────────
 
 /**
@@ -335,9 +360,14 @@ export function formatWeb(web: string): string {
  * @returns Display name for the speaker
  */
 export function mapFilenameToName(filename: string, oradoresPrincipales: OradorPrincipal[]): string {
-  // Three-tier filename-to-name mapping:
+  // Four-tier filename-to-name mapping:
   
-  // 1. Exact match in oradoresPrincipales
+  // 1. Check SPEAKER_NAME_MAP first (all 24 speakers with full names)
+  if (SPEAKER_NAME_MAP[filename]) {
+    return SPEAKER_NAME_MAP[filename];
+  }
+  
+  // 2. Exact match in oradoresPrincipales
   const exactMatch = oradoresPrincipales.find(
     orador => orador.archivo === filename
   );
@@ -345,7 +375,7 @@ export function mapFilenameToName(filename: string, oradoresPrincipales: OradorP
     return exactMatch.nombre;
   }
   
-  // 2. Generate name from filename
+  // 3. Generate name from filename
   // Remove file extension, replace underscores/hyphens with spaces, convert to uppercase
   const baseName = filename.replace(/\.[^/.]+$/, ''); // Remove extension
   const generatedName = baseName
@@ -353,9 +383,9 @@ export function mapFilenameToName(filename: string, oradoresPrincipales: OradorP
     .replace(/\b\w/g, char => char.toUpperCase()) // Capitalize first letter of each word
     .toUpperCase(); // Convert to uppercase
   
-  // 3. Fallback to placeholder if generated name is empty
+  // 4. Fallback to placeholder if generated name is empty
   if (!generatedName || generatedName.trim() === '') {
-    return 'Orador Jueves'; // Generic placeholder
+    return 'Orador'; // Generic placeholder
   }
   
   return generatedName;

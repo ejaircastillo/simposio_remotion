@@ -191,15 +191,16 @@ const Intro: React.FC = () => {
 
         <div
           style={{
-            opacity:      ci(f, [140, 160], [0, 1]),
-            transform:    `translateY(${ci(f, [140, 160], [20, 0])}px)`,
-            background:   C.gold,
-            padding:      '14px 40px',
-            borderRadius: 30,
+            opacity:       ci(f, [140, 160], [0, 1]),
+            transform:     `translateY(${ci(f, [140, 160], [20, 0])}px)`,
+            background:    'rgba(255,255,255,0.1)',
+            border:        `1px solid ${C.gold}`,
+            padding:       '12px 24px',
+            borderRadius:  8,
           }}
         >
-          <div style={{ color: C.bg, fontSize: 26, fontWeight: 700, letterSpacing: 2, textAlign: 'center' }}>
-            Actividad no arancelada
+          <div style={{ color: C.gold, fontSize: 30, fontWeight: 500, letterSpacing: 1, textAlign: 'center' }}>
+            Declarado de interés jurídico por la Legislatura de la Ciudad Autónoma de Buenos Aires
           </div>
         </div>
       </AbsoluteFill>
