@@ -5,6 +5,11 @@ export interface SpeakerData {
   cv: string;
   archivo: string;
   dias: ('jueves' | 'viernes')[];
+  imageOffsetX?: number;
+  imageOffsetY?: number;
+  imageZoom?: number;
+  imageFade?: number;
+  cvFontSize?: number;
 }
 
 export const SPEAKERS: SpeakerData[] = [
@@ -31,6 +36,7 @@ export const SPEAKERS: SpeakerData[] = [
     cv: 'Abogado. Especialista en Derecho Penal (UCA). Coordinador del Programa de Derechos y Garantías de las Víctimas de Delito y Subdirector del Instituto de Derecho Procesal Penal del Colegio Público de la Abogacía de la Capital Federal (CPACF). Consejero del Colegio Público de la Abogacía de la Capital Federal. Ex Profesor de Derecho Procesal Penal de la Universidad Católica de Salta (UCASAL) y Ex Profesor de Derecho Procesal Penal de la Universidad de Buenos Aires (UBA).',
     archivo: 'console.webp',
     dias: ['jueves'],
+    imageOffsetX: -150,
   },
   {
     id: 'maria-jimena-molina',
@@ -79,6 +85,7 @@ export const SPEAKERS: SpeakerData[] = [
     cv: 'Abogado (UBA). Licenciado en Comunicación Social (USAL) y en Psicología Social (UAJFK). Profesor de Ciencia Política (UCES). Director de la Revista IIDOS. Autor del Manual de Derechos Humanos y Garantías de las Personas Víctimas de Delito. Creador del Índice Legislativo de Usina de Justicia (IUJ). Consejero académico del Instituto de Victimología de Usina de Justicia.',
     archivo: 'roggero.webp',
     dias: ['jueves'],
+    imageOffsetX: -150,
   },
   {
     id: 'noelia-marelyn-juarez',

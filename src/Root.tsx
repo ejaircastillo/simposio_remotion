@@ -1,95 +1,7 @@
 import React from 'react';
 import { Composition } from 'remotion';
 import { SimposioPromo, TOTAL_FRAMES as PROMO_FRAMES, FPS, WIDTH, HEIGHT } from './Video';
-import { OradorVideo, TOTAL_FRAMES as ORADOR_FRAMES } from './OradorVideo';
-
-const OradorAebiWrap: React.FC = () => (
-  <OradorVideo speakerId="marcelo-aebi" dias="VIERNES 10 DE ABRIL" />
-);
-
-const OradorMariaJimenaMolinaWrap: React.FC = () => (
-  <OradorVideo speakerId="maria-jimena-molina" dias="JUEVES 9 DE ABRIL" />
-);
-
-const OradorDianaCohenAgrestWrap: React.FC = () => (
-  <OradorVideo speakerId="diana-cohen-agrest" dias="JUEVES 9 DE ABRIL" />
-);
-
-const OradorIrvinWallerWrap: React.FC = () => (
-  <OradorVideo speakerId="irvin-waller" dias="VIERNES 10 DE ABRIL" />
-);
-
-const OradorRicardoGilLavedraWrap: React.FC = () => (
-  <OradorVideo speakerId="ricardo-gil-lavedra" dias="JUEVES 9 DE ABRIL" />
-);
-
-const OradorJoseConsoleWrap: React.FC = () => (
-  <OradorVideo speakerId="jose-console" dias="JUEVES 9 DE ABRIL" />
-);
-
-const OradorMarianaRomanoWrap: React.FC = () => (
-  <OradorVideo speakerId="mariana-romano" dias="VIERNES 10 DE ABRIL" />
-);
-
-const OradorGustavoTopicWrap: React.FC = () => (
-  <OradorVideo speakerId="gustavo-topic" dias="VIERNES 10 DE ABRIL" />
-);
-
-const OradorMariaDeLaLuzLimaMalvidoWrap: React.FC = () => (
-  <OradorVideo speakerId="maria-de-la-luz-lima-malvido" dias="JUEVES 9 DE ABRIL" />
-);
-
-const OradorFranciscoCastexWrap: React.FC = () => (
-  <OradorVideo speakerId="francisco-castex" dias="JUEVES 9 DE ABRIL" />
-);
-
-const OradorDanielRoggeroWrap: React.FC = () => (
-  <OradorVideo speakerId="daniel-roggero" dias="JUEVES 9 DE ABRIL" />
-);
-
-const OradorNoeliaMarelynJuarezWrap: React.FC = () => (
-  <OradorVideo speakerId="noelia-marelyn-juarez" dias="JUEVES 9 DE ABRIL" />
-);
-
-const OradorRaquelSlotolowWrap: React.FC = () => (
-  <OradorVideo speakerId="raquel-slotolow" dias="JUEVES 9 DE ABRIL" />
-);
-
-const OradorGuillermoBargnaWrap: React.FC = () => (
-  <OradorVideo speakerId="guillermo-bargna" dias="JUEVES 9 DE ABRIL" />
-);
-
-const OradorDarioSolisWrap: React.FC = () => (
-  <OradorVideo speakerId="dario-solis" dias="JUEVES 9 DE ABRIL" />
-);
-
-const OradorFranciscoQuintanaWrap: React.FC = () => (
-  <OradorVideo speakerId="francisco-quintana" dias="VIERNES 10 DE ABRIL" />
-);
-
-const OradorGermanGaravanoWrap: React.FC = () => (
-  <OradorVideo speakerId="german-garavano" dias="VIERNES 10 DE ABRIL" />
-);
-
-const OradorMartinCasaresWrap: React.FC = () => (
-  <OradorVideo speakerId="martin-casares" dias="VIERNES 10 DE ABRIL" />
-);
-
-const OradorFrancoFiumaraWrap: React.FC = () => (
-  <OradorVideo speakerId="franco-fiumara" dias="VIERNES 10 DE ABRIL" />
-);
-
-const OradorFernandoSotoWrap: React.FC = () => (
-  <OradorVideo speakerId="fernando-soto" dias="VIERNES 10 DE ABRIL" />
-);
-
-const OradorMarceloPeluzziWrap: React.FC = () => (
-  <OradorVideo speakerId="marcelo-peluzzi" dias="VIERNES 10 DE ABRIL" />
-);
-
-const OradorFranciscoJavierPascuaWrap: React.FC = () => (
-  <OradorVideo speakerId="francisco-javier-pascua" dias="VIERNES 10 DE ABRIL" />
-);
+import { OradorVideo, TOTAL_FRAMES as ORADOR_FRAMES, OradorVideoSchema } from './OradorVideo';
 
 export const Root: React.FC = () => (
   <>
@@ -102,27 +14,27 @@ export const Root: React.FC = () => (
       height={HEIGHT}
     />
 
-    <Composition id="OradorAebi" component={OradorAebiWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorMariaJimenaMolina" component={OradorMariaJimenaMolinaWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorDianaCohenAgrest" component={OradorDianaCohenAgrestWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorIrvinWaller" component={OradorIrvinWallerWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorRicardoGilLavedra" component={OradorRicardoGilLavedraWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorJoseConsole" component={OradorJoseConsoleWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorMarianaRomano" component={OradorMarianaRomanoWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorGustavoTopic" component={OradorGustavoTopicWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorMariaDeLaLuzLimaMalvido" component={OradorMariaDeLaLuzLimaMalvidoWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorFranciscoCastex" component={OradorFranciscoCastexWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorDanielRoggero" component={OradorDanielRoggeroWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorNoeliaMarelynJuarez" component={OradorNoeliaMarelynJuarezWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorRaquelSlotolow" component={OradorRaquelSlotolowWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorGuillermoBargna" component={OradorGuillermoBargnaWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorDarioSolis" component={OradorDarioSolisWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorFranciscoQuintana" component={OradorFranciscoQuintanaWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorGermanGaravano" component={OradorGermanGaravanoWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorMartinCasares" component={OradorMartinCasaresWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorFrancoFiumara" component={OradorFrancoFiumaraWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorFernandoSoto" component={OradorFernandoSotoWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorMarceloPeluzzi" component={OradorMarceloPeluzziWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="OradorFranciscoJavierPascua" component={OradorFranciscoJavierPascuaWrap} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
+    <Composition id="OradorAebi" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'marcelo-aebi', dias: 'VIERNES 10 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorMariaJimenaMolina" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'maria-jimena-molina', dias: 'JUEVES 9 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorDianaCohenAgrest" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'diana-cohen-agrest', dias: 'JUEVES 9 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorIrvinWaller" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'irvin-waller', dias: 'VIERNES 10 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorRicardoGilLavedra" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'ricardo-gil-lavedra', dias: 'JUEVES 9 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorJoseConsole" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'jose-console', dias: 'JUEVES 9 DE ABRIL', imageOffsetX: -150, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorMarianaRomano" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'mariana-romano', dias: 'VIERNES 10 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorGustavoTopic" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'gustavo-topic', dias: 'VIERNES 10 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorMariaDeLaLuzLimaMalvido" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'maria-de-la-luz-lima-malvido', dias: 'JUEVES 9 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorFranciscoCastex" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'francisco-castex', dias: 'JUEVES 9 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorDanielRoggero" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'daniel-roggero', dias: 'JUEVES 9 DE ABRIL', imageOffsetX: -150, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorNoeliaMarelynJuarez" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'noelia-marelyn-juarez', dias: 'JUEVES 9 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorRaquelSlotolow" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'raquel-slotolow', dias: 'JUEVES 9 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorGuillermoBargna" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'guillermo-bargna', dias: 'JUEVES 9 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorDarioSolis" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'dario-solis', dias: 'JUEVES 9 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorFranciscoQuintana" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'francisco-quintana', dias: 'VIERNES 10 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorGermanGaravano" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'german-garavano', dias: 'VIERNES 10 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorMartinCasares" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'martin-casares', dias: 'VIERNES 10 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorFrancoFiumara" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'franco-fiumara', dias: 'VIERNES 10 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorFernandoSoto" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'fernando-soto', dias: 'VIERNES 10 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorMarceloPeluzzi" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'marcelo-peluzzi', dias: 'VIERNES 10 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
+    <Composition id="OradorFranciscoJavierPascua" component={OradorVideo} durationInFrames={ORADOR_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} schema={OradorVideoSchema} defaultProps={{ speakerId: 'francisco-javier-pascua', dias: 'VIERNES 10 DE ABRIL', imageOffsetX: 0, imageOffsetY: 0, imageZoom: 100, imageFade: 70, cvFontSize: 36 }} />
   </>
 );

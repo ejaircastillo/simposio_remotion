@@ -96,7 +96,7 @@ export const OradorProfile: React.FC<OradorProfileProps> = ({
 
   const ACT1_END = 210;  // 7 segundos
   const ACT2_START = 210;
-  const BOTON_START = 420;
+  const BOTON_START = 570;  // Aparece más cerca del final (20s video)
 
   const isAct1 = frame < ACT1_END;
   const isAct2 = frame >= ACT1_END;
@@ -115,6 +115,9 @@ export const OradorProfile: React.FC<OradorProfileProps> = ({
 
   const fotoScale = spring({ frame: Math.max(0, frame - ACT1_END), fps, config: { damping: 16, stiffness: 100 } });
   const fotoOpacity = ci(frame, [ACT1_END, ACT1_END + 30], [0, 1]);
+
+  const conLaParticipacionOpacity = ci(frame, [180, 200], [0, 1]);
+  const conLaParticipacionY = ci(frame, [180, 200], [-30, 0]);
 
   const nombreOpacity = ci(frame, [ACT1_END + 30, ACT1_END + 60], [0, 1]);
   const nombreY = ci(frame, [ACT1_END + 30, ACT1_END + 60], [40, 0]);
@@ -223,27 +226,46 @@ export const OradorProfile: React.FC<OradorProfileProps> = ({
 
         {isAct2 && (
           <AbsoluteFill style={{ opacity: act2Enter }}>
+            <div
+              style={{
+                position: 'absolute',
+                top: 40,
+                right: 40,
+                zIndex: 20,
+                opacity: conLaParticipacionOpacity,
+                transform: `translateY(${conLaParticipacionY}px)`,
+              }}
+            >
+              <div
+                style={{
+                  color: C.gold,
+                  fontSize: 28,
+                  fontWeight: 600,
+                  letterSpacing: 2,
+                  textTransform: 'uppercase',
+                  textAlign: 'right',
+                }}
+              >
+                Con la Participación de
+              </div>
+            </div>
+
             <div style={{ display: 'flex', height: '100%', width: '100%' }}>
-              <div style={{ width: '45%', height: '100%', position: 'relative' }}>
+              <div style={{ width: '45%', height: '100%', position: 'relative', overflow: 'hidden' }}>
                 <div
                   style={{
                     position: 'absolute',
                     inset: 0,
                     opacity: fotoOpacity,
+                    backgroundImage: `url('${staticFile(`Oradores/${speaker.archivo}`)}')`,
+                    backgroundSize: `${speaker.imageZoom || 100}%`,
+                    backgroundPosition: `calc(50% + ${speaker.imageOffsetX || 0}px) calc(50% + ${speaker.imageOffsetY || 0}px)`,
+                    backgroundRepeat: 'no-repeat',
+                    maskImage: `linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) ${speaker.imageFade ?? 70}%, rgba(0,0,0,0) 100%)`,
+                    WebkitMaskImage: `linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) ${speaker.imageFade ?? 70}%, rgba(0,0,0,0) 100%)`,
                     transform: `scale(${fotoScale})`,
                   }}
-                >
-                  <Img
-                    src={staticFile(`Oradores/${speaker.archivo}`)}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      maskImage: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)',
-                      WebkitMaskImage: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)',
-                    }}
-                  />
-                </div>
+                />
               </div>
 
               <div
@@ -286,7 +308,7 @@ export const OradorProfile: React.FC<OradorProfileProps> = ({
                   {speaker.titulo}
                 </div>
 
-                <div style={{ color: C.white, fontSize: 36, lineHeight: 1.6 }}>
+                <div style={{ color: C.white, fontSize: speaker.cvFontSize || 36, lineHeight: 1.6 }}>
                   {speaker.cv}
                 </div>
 
