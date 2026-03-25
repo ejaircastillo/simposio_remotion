@@ -27,6 +27,7 @@ const AVAILABLE_PHOTOS = [
   'peluzzi2.webp',
   'quintana.webp',
   'Ricardo-Gil-lavedra.webp',
+  'mariana_hd2.webp',
   'roggero.webp',
   'romano.webp',
   'slotolow.webp',

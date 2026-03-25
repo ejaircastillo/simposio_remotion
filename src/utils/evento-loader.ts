@@ -293,6 +293,7 @@ const SPEAKER_NAME_MAP: Record<string, string> = {
   'peluzzi.webp': 'MARCELO PELUZZI',
   'pascua.webp': 'FRANCISCO JAVIER PASCUA',
   'aebi.webp': 'MARCELO AEBI',
+  'mariana_hd2.webp': 'MARIANA ROMANO',
 };
 
 // ─── Helper Functions ───────────────────────────────────────────────────────────

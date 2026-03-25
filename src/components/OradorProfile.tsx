@@ -94,39 +94,43 @@ export const OradorProfile: React.FC<OradorProfileProps> = ({
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
+  const POSTER_FRAME_DURATION = 30; // 1 segundo a 30fps
+  const POSTER_FRAME_TARGET = 300; // Frame donde todo está visible
+  const displayFrame = frame < POSTER_FRAME_DURATION ? POSTER_FRAME_TARGET : frame - POSTER_FRAME_DURATION;
+
   const ACT1_END = 210;  // 7 segundos
   const ACT2_START = 210;
-  const BOTON_START = 570;  // Aparece más cerca del final (20s video)
+  const BOTON_START = 540;  // Aparece más cerca del final (ajustado por offset de 30 frames)
 
-  const isAct1 = frame < ACT1_END;
-  const isAct2 = frame >= ACT1_END;
+  const isAct1 = displayFrame < ACT1_END;
+  const isAct2 = displayFrame >= ACT1_END;
 
-  const act1Exit = ci(frame, [170, 210], [0, 1]);
-  const act2Enter = ci(frame, [210, 240], [0, 1]);
+  const act1Exit = ci(displayFrame, [170, 210], [0, 1]);
+  const act2Enter = ci(displayFrame, [210, 240], [0, 1]);
 
-  const logoOpacity = ci(frame, [0, 22], [0, 1]);
-  const barOpacity = ci(frame, [18, 36], [0, 1]);
-  const primerOpacity = ci(frame, [28, 46], [0, 1]);
-  const tituloOpacity = ci(frame, [42, 68], [0, 1]);
-  const tituloY = ci(frame, [42, 68], [40, 0]);
-  const citaOpacity = ci(frame, [62, 86], [0, 1]);
-  const declaradoOpacity = ci(frame, [90, 120], [0, 1]);
-  const declaradoY = ci(frame, [90, 120], [20, 0]);
+  const logoOpacity = ci(displayFrame, [0, 22], [0, 1]);
+  const barOpacity = ci(displayFrame, [18, 36], [0, 1]);
+  const primerOpacity = ci(displayFrame, [28, 46], [0, 1]);
+  const tituloOpacity = ci(displayFrame, [42, 68], [0, 1]);
+  const tituloY = ci(displayFrame, [42, 68], [40, 0]);
+  const citaOpacity = ci(displayFrame, [62, 86], [0, 1]);
+  const declaradoOpacity = ci(displayFrame, [90, 120], [0, 1]);
+  const declaradoY = ci(displayFrame, [90, 120], [20, 0]);
 
-  const fotoScale = spring({ frame: Math.max(0, frame - ACT1_END), fps, config: { damping: 16, stiffness: 100 } });
-  const fotoOpacity = ci(frame, [ACT1_END, ACT1_END + 30], [0, 1]);
+  const fotoScale = spring({ frame: Math.max(0, displayFrame - ACT1_END), fps, config: { damping: 16, stiffness: 100 } });
+  const fotoOpacity = ci(displayFrame, [ACT1_END, ACT1_END + 30], [0, 1]);
 
-  const conLaParticipacionOpacity = ci(frame, [180, 200], [0, 1]);
-  const conLaParticipacionY = ci(frame, [180, 200], [-30, 0]);
+  const conLaParticipacionOpacity = ci(displayFrame, [180, 200], [0, 1]);
+  const conLaParticipacionY = ci(displayFrame, [180, 200], [-30, 0]);
 
-  const nombreOpacity = ci(frame, [ACT1_END + 30, ACT1_END + 60], [0, 1]);
-  const nombreY = ci(frame, [ACT1_END + 30, ACT1_END + 60], [40, 0]);
+  const nombreOpacity = ci(displayFrame, [ACT1_END + 30, ACT1_END + 60], [0, 1]);
+  const nombreY = ci(displayFrame, [ACT1_END + 30, ACT1_END + 60], [40, 0]);
 
-  const tituloOradorOpacity = ci(frame, [ACT1_END + 50, ACT1_END + 80], [0, 1]);
+  const tituloOradorOpacity = ci(displayFrame, [ACT1_END + 50, ACT1_END + 80], [0, 1]);
 
-  const cvScroll = ci(frame, [ACT1_END + 80, ACT1_END + 150], [0, -80]);
+  const cvScroll = ci(displayFrame, [ACT1_END + 80, ACT1_END + 150], [0, -80]);
 
-  const botonOpacity = ci(frame, [BOTON_START, BOTON_START + 30], [0, 1]);
+  const botonOpacity = ci(displayFrame, [BOTON_START, BOTON_START + 30], [0, 1]);
 
   return (
     <AbsoluteFill>
@@ -229,8 +233,8 @@ export const OradorProfile: React.FC<OradorProfileProps> = ({
             <div
               style={{
                 position: 'absolute',
-                top: 40,
-                right: 40,
+                top: 220,
+                left: 516,
                 zIndex: 20,
                 opacity: conLaParticipacionOpacity,
                 transform: `translateY(${conLaParticipacionY}px)`,
