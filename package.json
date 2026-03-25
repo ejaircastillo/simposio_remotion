@@ -10,11 +10,11 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "@remotion/cli": "^4.0.0",
-    "@remotion/zod-types": "^4.0.438",
+    "@remotion/cli": "4.0.434",
+    "@remotion/zod-types": "4.0.434",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "remotion": "^4.0.0",
+    "remotion": "4.0.434",
     "zod": "^4.3.6"
   },
   "devDependencies": {

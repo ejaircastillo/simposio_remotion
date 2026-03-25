@@ -50,7 +50,7 @@ export const SPEAKERS: SpeakerData[] = [
     id: 'mariana-romano',
     nombre: 'MARIANA ROMANO',
     titulo: 'Abogada',
-    cv: 'Abogada (UBA). Diplomada en Derechos Humanos (UA), Ciberdelincuencia y Evidencia Digital (UA y CEU) e Inclusión Social (OEA). Se desempeña en la Justicia Nacional en lo Criminal y Correccional de la República Argentina. Asesora ad honorem del Comisionado para el Monitoreo y Combate del Antisemitismo de la OEA. Diretora de la Comisión de Relaciones Internacionales de la AAJRA. Representante ante la OEA de la Asociación Civil Usina de Justicia.',
+    cv: 'Abogada (UBA). Diplomada en Derechos Humanos (UA), Ciberdelincuencia y Evidencia Digital (UA y CEU) e Inclusión Social (OEA). Se desempeña en la Justicia Nacional en lo Criminal y Correccional de la República Argentina. Asesora ad honorem del Comisionado para el Monitoreo y Combate del Antisemitismo de la OEA. Directora de la Comisión de Relaciones Internacionales de la AAJRA. Representante ante la OEA de la Asociación Civil Usina de Justicia.',
     archivo: 'romano.webp',
     dias: ['viernes'],
   },
